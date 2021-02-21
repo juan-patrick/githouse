@@ -2,3 +2,17 @@ html,
 body {
 	font-family: "Nunito", sans-serif;
 }
+
+.background {
+	background-color: #f1efe5;
+}
+
+main {
+	border-radius: 2.5rem 2.5rem 0 0;
+}
+
+.avatar {
+	width: 85px;
+	width: 85px; 
+	border-radius: 42%;
+}
