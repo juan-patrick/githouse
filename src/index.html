@@ -13,55 +13,49 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
-  <div class="background flex flex-col w-full h-screen">
-    <header class="flex w-full justify-between h-20 px-5">
-      <div class="flex items-center text-lg font-semibold w-full">
-        <span class="w-6 h-6 mr-1">
-          <img src="assets/arrow-down.svg" alt="arrow down" />
-        </span>
-        All rooms
-      </div>
-      <div class="flex mr-12">
-        <img class="w-8" src="assets/blank-document.svg" alt="file" />
+<body class="h-screen sm:max-w-lg flex flex-col background m-auto">
 
-      </div>
-      <div class="flex items-center">
-        <img class="w-11 h-9 object-cover rounded-full border-2 border-pink-700"
-          src="https://images-na.ssl-images-amazon.com/images/M/MV5BNjY0NDE5MDQ5OF5BMl5BanBnXkFtZTcwMTI4MDQxOA@@._V1_UY256_CR12,0,172,256_AL_.jpg"
-          alt="avatar" />
-      </div>
-    </header>
+  <header class="flex w-full justify-between h-20 px-5">
+    <div class="flex items-center text-lg font-semibold w-full">
+      <span class="w-6 h-6 mr-1">
+        <img src="assets/arrow-down.svg" alt="arrow down" />
+      </span>
+      All rooms
+    </div>
+    <div class="flex mr-12">
+      <img class="w-8" src="assets/blank-document.svg" alt="file" />
 
-    <main class="flex flex-col h-full w-full bg-white p-6 overflow-auto">
-      <div class="flex w-full">
-        <h2 class="text-lg font-bold">🔴 Como Crescer no Instagram</h2>
-      </div>
+    </div>
+    <div class="flex items-center" id="profile">     
+    </div>
+  </header>
 
-      <div class="grid grid-flow-row grid-cols-3 grid-rows-3 gap-4 mt-6 w-full" id="followers"
-        data-set="followers">
+  <main class="flex flex-col h-full w-full bg-white p-6 overflow-auto mb-28">
+    <div class="flex w-full">
+      <h2 class="text-lg font-bold">🔴 Como Crescer no Instagram</h2>
+    </div>
 
-      </div>
-    </main>
+    <div class="grid grid-flow-row grid-cols-3 grid-rows-3 gap-4 mt-6 w-full" id="followers" data-set="followers">
 
-    <footer class="flex items-center w-full h-28 bg-white fixed bottom-0 pb-10 px-4">
-      <div class="w-full">
-        <button class="h-10 w-40 bg-gray-100 hover:bg-gray-200 rounded-full">
-          <span class="text-red-400 font-semibold">✌️ Leave quietly</span>
-        </button>
-      </div>
-      <div class="flex">
-        <button
-          class="rounded-full h-10 w-10 flex items-center justify-center bg-gray-100 hover:bg-gray-200 rounded-full mr-8">
-          <img class="h-5 w-5" src="assets/plus.svg" alt="up-hand" />
-        </button>
-        <button
-          class="rounded-full h-10 w-10 flex items-center justify-center bg-gray-100 hover:bg-gray-200 rounded-full">
-          <img class="h-6 w-6" src="assets/right-hand.svg" alt="up-hand" />
-        </button>
-      </div>
-    </footer>
-  </div>
+    </div>
+  </main>
+
+  <footer class="flex items-center justify-between m-auto w-full h-28 bg-white fixed bottom-0 sm:max-w-lg p-4">
+    <button class="h-10 w-40 bg-gray-100 hover:bg-gray-200 rounded-full">
+      <span class="text-red-400 font-semibold">✌️ Leave quietly</span>
+    </button>
+
+    <div class="flex items-center">
+      <button
+        class="rounded-full h-10 w-10 flex items-center justify-center bg-gray-100 hover:bg-gray-200 rounded-full mr-8">
+        <img class="h-5 w-5" src="assets/plus.svg" alt="up-hand" />
+      </button>
+      <button
+        class="rounded-full h-10 w-10 flex items-center justify-center bg-gray-100 hover:bg-gray-200 rounded-full">
+        <img class="h-6 w-6" src="assets/right-hand.svg" alt="up-hand" />
+      </button>
+    </div>
+  </footer>
 
   <script src="js/index.js"></script>
 </body>
