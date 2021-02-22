@@ -2,6 +2,12 @@ const githubURL = 'https://api.github.com';
 const githubUser = 'juan-patrick';
 
 const API = {
+  async getUser() {
+    const response = await fetch(`${githubURL}/users/${githubUser}`);
+    const user = await response.json();
+
+    return user;
+  },
   async getFollowers() {
     const response = await fetch(`${githubURL}/users/${githubUser}/followers`);
     const followers = await response.json();
@@ -11,6 +17,7 @@ const API = {
 };
 
 const DOM = {
+  profileContainer: document.querySelector('#profile'),
   followersContainer: document.querySelector('#followers'),
   addFollower(follower) {
     const followerDiv = document.createElement('div');
@@ -19,6 +26,14 @@ const DOM = {
     followerDiv.innerHTML = DOM.innerHTMLFollower(follower);
 
     DOM.followersContainer.appendChild(followerDiv);
+  },
+  addProfileAvatar(user) {
+    DOM.profileContainer.innerHTML = DOM.innerHTMLProfile(user);
+  },
+  innerHTMLProfile(user) {
+    const html = `<img class="w-11 h-9 object-cover rounded-full border-2 border-pink-700" src="${user.avatar_url}" alt="profile" />`;
+
+    return html;
   },
   innerHTMLFollower(follower) {
     const html = `    
@@ -43,20 +58,23 @@ const DOM = {
     skeletonDiv.innerHTML = DOM.innerHTMLAvatarSkeleton();
 
     DOM.followersContainer.appendChild(skeletonDiv);
-  }
+  },
 }
 
 
 const App = {
   async init() {
+    API.getUser().then(DOM.addProfileAvatar);
+
     for (let i = 0; i < 20; i++) {
       DOM.addAvatarSkeleton();
     };
 
     setTimeout(async () => {
-      const followers = await API.getFollowers();
       App.reset();
-      followers.forEach(DOM.addFollower);
+      API.getFollowers().then(followers => {
+        followers.forEach(DOM.addFollower)
+      });
     }, 1000);
   },
   reset() {
