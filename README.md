@@ -3,8 +3,8 @@
 ## Githouse x Clubhouse
 
 <div style="display:flex; margin-bottom: 50px">
-  <img style="width:45%;margin-right:10px" src="./src/example/githouse.png">
-  <img style="width:45%;" src="./src/example/clubhouse.png">
+  <img style="width:200px;margin-right:10px" src="./src/example/githouse.png">
+  <img style="width:200px;" src="./src/example/clubhouse.png">
 </div>
 
 ## Githouse
